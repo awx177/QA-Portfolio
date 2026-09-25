@@ -1,0 +1,38 @@
+# Operating system files
+
+.DS_Store
+Thumbs.db
+
+# IDE
+
+.idea/
+.vscode/
+
+# Logs
+
+*.log
+
+# Temporary files
+
+*.tmp
+
+# Local environment files
+
+.env
+.env.*
+
+# Database dumps / local data
+
+*.dump
+*.sql.bak
+
+# Node.js
+
+node_modules/
+
+# Python
+
+**pycache**/
+*.pyc
+.venv/
+venv/

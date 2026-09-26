@@ -124,17 +124,15 @@ Focus areas:
 * Category navigation
 * Product discovery
 
-Defects identified:
+Defects identified during Session 001:
 
-| ID     | Area              | Defect                                             |
-| ------ | ----------------- | -------------------------------------------------- |
-| BUG-01 | Product Discovery | Chainsaw category redirects to a 404 page          |
-| BUG-02 | UI / Header       | Website logo is not displayed                      |
-| BUG-03 | Shopping Cart     | Cart item subtotal is displayed as `$00.00`        |
-| BUG-04 | Shopping Cart     | Delete button does not remove the selected product |
-| BUG-05 | Navigation        | Home navigation redirects to the Contact page      |
+| ID     | Area              | Defect                                        |
+| ------ | ----------------- | --------------------------------------------- |
+| BUG-01 | Product Discovery | Chainsaw category redirects to a 404 page     |
+| BUG-02 | UI / Header       | Website logo is not displayed                 |
+| BUG-05 | Navigation        | Home navigation redirects to the Contact page |
 
-> BUG-03 and BUG-04 were identified during Session 002. They are included here as part of the complete defect list.
+Detailed reproduction steps and evidence for these defects were documented in Jira.
 
 ### Session 002 — Shopping Cart
 
@@ -147,19 +145,14 @@ Focus areas:
 * Removing products
 * Cart state after user actions
 
-Defects identified:
+Defects identified during Session 002:
 
-| ID     | Area              | Defect                                             |
-| ------ | ----------------- | -------------------------------------------------- |
-| BUG-01 | Product Discovery | Chainsaw category redirects to a 404 page          |
-| BUG-02 | UI / Header       | Website logo is not displayed                      |
-| BUG-03 | Shopping Cart     | Cart item subtotal is displayed as `$00.00`        |
-| BUG-04 | Shopping Cart     | Delete button does not remove the selected product |
-| BUG-05 | Navigation        | Home navigation redirects to the Contact page      |
+| ID     | Area          | Defect                                             |
+| ------ | ------------- | -------------------------------------------------- |
+| BUG-03 | Shopping Cart | Cart item subtotal is displayed as `$00.00`        |
+| BUG-04 | Shopping Cart | Delete button does not remove the selected product |
 
-> BUG-01, BUG-02 and BUG-05 were identified during Session 001. They are included here as part of the complete defect list.
-
-Detailed reproduction steps and evidence for each defect were documented in Jira.
+Detailed reproduction steps and evidence for these defects were documented in Jira.
 
 ## 8. Defect Summary
 
@@ -189,7 +182,7 @@ Exploratory testing was performed without relying exclusively on predefined test
 
 The tester explored the application from a user's perspective, followed navigation paths, checked UI behavior, verified state changes, and investigated unexpected results.
 
-This approach resulted in the discovery of five defects in the dedicated buggy environment.
+Two exploratory sessions resulted in the discovery of five defects in the dedicated buggy environment.
 
 ## 10. API Testing
 

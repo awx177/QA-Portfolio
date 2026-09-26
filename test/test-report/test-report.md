@@ -2,342 +2,343 @@
 
 ## 1. Document Information
 
-| Field            | Value                                 |
-| ---------------- | ------------------------------------- |
-| Project          | Practice Software Testing             |
-| Application      | Practice Software Testing             |
-| Test Type        | Manual Testing                        |
-| Testing Approach | Planned Testing + Exploratory Testing |
-| Test Management  | Qase                                  |
-| Defect Tracking  | Jira                                  |
-| API Testing      | Postman                               |
-| Database Testing | PostgreSQL / Beekeeper Studio         |
-| Tester           | Andrii                                |
-| Test Report      | Final                                 |
+  Field                  Details
+  ---------------------- ------------------------------------------------
+  Application            Practice Software Testing
+  Testing Type           Manual Web Testing
+  Tester                 Andrii
+  Test Management        Qase
+  Defect Tracking        Jira
+  API Testing            Postman
+  Database Testing       PostgreSQL / Beekeeper Studio
+  Standard Environment   <https://practicesoftwaretesting.com/>
+  Buggy Environment      <https://with-bugs.practicesoftwaretesting.com/>
 
----
+## 2. Objective
 
-# 2. Objective
+The objective of this testing activity was to verify the functionality
+of the Practice Software Testing web application, identify defects,
+document test results, and demonstrate a complete junior-level manual QA
+workflow.
 
-The objective of this testing project was to evaluate the main functionality of the Practice Software Testing web application, identify defects, document test results, and demonstrate a complete manual QA testing workflow.
+The testing process included planned manual testing, exploratory
+testing, API testing, database testing, and defect reporting.
 
-The project included:
+## 3. Test Scope
 
-* Test Planning
-* Functional Testing
-* Non-Functional Testing
-* Test Case Design
-* Test Execution
-* Exploratory Testing
-* Bug Reporting
-* API Testing
-* Database Testing
-* Test Documentation
+### In Scope
 
----
+- User interface
+- Navigation
+- Product categories
+- Product discovery
+- Authentication-related functionality
+- Product details
+- Shopping cart
+- Cart calculations
+- Product removal
+- API functionality
+- Database data and relationships
+- Basic non-functional checks
+- Exploratory testing and bug hunting
 
-# 3. Test Scope
+### Out of Scope
 
-## 3.1 In Scope
+- Performance/load testing
+- Security penetration testing
+- Cross-browser testing on a large browser matrix
+- Mobile application testing
+- Production monitoring
 
-The following areas were included in the testing scope:
-
-* Authentication
-* Login
-* Registration
-* Product browsing
-* Product search
-* Product filtering and sorting
-* Shopping Cart
-* Checkout
-* Basic API functionality
-* Basic database validation
-
-## 3.2 Out of Scope
-
-The following areas were not included in the main web application testing scope:
-
-* Performance and load testing
-* Security penetration testing
-* Cross-browser compatibility testing across a large number of browsers
-* Mobile application testing
-* Production monitoring
-* Payment processing with a real payment provider
-
----
-
-# 4. Test Environments
-
-Two application environments were used during the project.
+## 4. Test Environments
 
 ### Standard Environment
 
 `https://practicesoftwaretesting.com/`
 
-The standard environment was used for planned functional testing and test case execution.
+The standard environment was used for planned manual test case
+execution.
 
-### With-Bugs Environment
+### Buggy Environment
 
 `https://with-bugs.practicesoftwaretesting.com/`
 
-The With-Bugs environment was used for exploratory testing and bug hunting.
+The buggy environment was used for exploratory testing and defect
+discovery.
 
----
+### Database Environment
 
-# 5. Test Documentation
+- PostgreSQL
+- Docker
+- Beekeeper Studio
 
-The following QA artifacts were created during the project:
+### API Testing Environment
 
-* Test Plan
-* Functional Checklist
-* Non-Functional Checklist
-* Test Cases
-* Qase Test Run
-* Exploratory Testing Sessions
-* Jira Bug Reports
-* API test collection
-* SQL queries
-* Test Report
+- Postman
 
----
+## 5. Test Documentation
 
-# 6. Test Case Execution
+The following QA artifacts were created as part of the portfolio:
 
-A set of 25 manual test cases was prepared and executed in Qase.
+- Test Plan
+- Functional Checklist
+- Non-Functional Checklist
+- Qase Test Cases
+- Qase Test Run
+- Exploratory Testing Sessions
+- Jira Bug Reports
+- Postman API Collection
+- PostgreSQL SQL Queries
+- Database test data
+- Test Evidence / Screenshots
 
-The test cases covered:
+## 6. Test Case Execution
 
-* Authentication
-* Registration
-* Products
-* Search
-* Filtering
-* Sorting
-* Shopping Cart
-* Checkout
+Planned manual test cases were created and executed in Qase against the
+standard Practice Software Testing environment.
 
-## Test Execution Summary
+The executed test cases covered core functionality such as:
 
-| Status  | Count |
-| ------- | ----: |
-| Passed  |    25 |
-| Failed  |     0 |
-| Blocked |     0 |
-| Total   |    25 |
+- Login
+- Form validation
+- Product navigation
+- Product details
+- Shopping cart
+- User actions
+- Logout
 
-### Result
+The planned test cases executed against the standard environment were
+passed, and no defects were identified during that execution.
 
-All 25 planned test cases were successfully executed and passed in the standard application environment.
+This result does not mean that the application contains no defects.
+Additional exploratory testing was therefore performed against the
+dedicated buggy environment.
 
-No defects were identified during this particular planned test execution.
+## 7. Exploratory Testing
 
----
+Exploratory testing was performed against:
 
-# 7. Exploratory Testing
+`https://with-bugs.practicesoftwaretesting.com/`
 
-Exploratory testing was performed separately on the With-Bugs environment.
+Two exploratory testing sessions were documented.
 
-The purpose of exploratory testing was to investigate application behavior outside the predefined test cases and identify unexpected behavior.
+### Session 001 --- UI, Navigation and Product Discovery
 
-Two exploratory testing sessions were performed.
+Focus areas:
 
-## Session 001 — Shopping Cart
+- Website header
+- Website logo
+- Main navigation
+- Home navigation
+- Product categories
+- Category navigation
+- Product discovery
 
-The first session focused on:
+Defects identified:
 
-* Add to Cart
-* Shopping Cart
-* Product quantity
-* Cart subtotal
-* Removing products
+  -----------------------------------------------------------------------
+  ID                      Area                    Defect
+  ----------------------- ----------------------- -----------------------
+  BUG-01                  Product Discovery       Chainsaw category
+                                                  redirects to a 404 page
 
-### Defects Identified
+  BUG-02                  UI / Header             Website logo is not
+                                                  displayed
 
-| ID     | Area          | Defect                                                     | Severity |
-| ------ | ------------- | ---------------------------------------------------------- | -------- |
-| BUG-01 | Shopping Cart | Add to Cart does not properly persist the selected product | High     |
-| BUG-02 | Shopping Cart | Cart item quantity does not update correctly               | High     |
-| BUG-03 | Shopping Cart | Cart item subtotal is displayed as `$00.00`                | High     |
-| BUG-04 | Shopping Cart | Delete button does not remove the selected product         | High     |
+BUG-05                  Navigation              Home navigation
+                                                  redirects to the
+                                                  Contact page
+  -----------------------------------------------------------------------
 
----
+### Session 002 --- Shopping Cart
 
-# 8. Exploratory Testing Session 002
+Focus areas:
 
-The second session focused on the checkout and payment flow.
+- Adding products to the cart
+- Product price
+- Product quantity
+- Item subtotal
+- Removing products
+- Cart state after user actions
 
-Areas explored:
+Defects identified:
 
-* Cart to Checkout navigation
-* Checkout information
-* Order information
-* Payment step
-* Payment validation
-* Checkout completion
+  -----------------------------------------------------------------------
+  ID                      Area                    Defect
+  ----------------------- ----------------------- -----------------------
+  BUG-03                  Shopping Cart           Cart item subtotal is
+                                                  displayed as `$00.00`
 
-### Defects Identified
+BUG-04                  Shopping Cart           Delete button does not
+                                                  remove the selected
+                                                  product
+  -----------------------------------------------------------------------
 
-| ID     | Area               | Defect                                              | Severity |
-| ------ | ------------------ | --------------------------------------------------- | -------- |
-| BUG-05 | Checkout / Payment | Payment step displays `304 missing payment gateway` | Critical |
+Detailed reproduction steps and evidence for each defect were documented
+in Jira.
 
----
+## 8. Defect Summary
 
-# 9. Defect Summary
+A total of 5 defects were identified during exploratory testing of the
+buggy environment.
 
-A total of **5 defects** were identified during exploratory testing of the With-Bugs environment.
+  -----------------------------------------------------------------------
+  ID                Summary           Area              Severity
+  ----------------- ----------------- ----------------- -----------------
+  BUG-01            Chainsaw category Product Discovery Medium
+                    redirects to a
+                    404 page
 
-| ID     | Area               | Severity | Source              | Status   |
-| ------ | ------------------ | -------- | ------------------- | -------- |
-| BUG-01 | Shopping Cart      | High     | Exploratory Testing | Reported |
-| BUG-02 | Shopping Cart      | High     | Exploratory Testing | Reported |
-| BUG-03 | Shopping Cart      | High     | Exploratory Testing | Reported |
-| BUG-04 | Shopping Cart      | High     | Exploratory Testing | Reported |
-| BUG-05 | Checkout / Payment | Critical | Exploratory Testing | Reported |
+  BUG-02            Website logo is   UI / Header       Low
+                    not displayed
 
-All identified defects were documented in Jira with reproduction steps, expected and actual results, severity, priority, and supporting evidence.
+  BUG-03            Cart item         Shopping Cart     High
+                    subtotal is
+                    displayed as
+                    `$00.00`
 
----
+  BUG-04            Delete button     Shopping Cart     High
+                    does not remove
+                    the selected
+                    product
 
-# 10. Planned Testing vs Exploratory Testing
+BUG-05            Home navigation   Navigation        Medium
+                    redirects to the
+                    Contact page
+  -----------------------------------------------------------------------
 
-The project demonstrated two different testing approaches.
+All five defects were documented and reported in Jira with reproduction
+steps, expected and actual results, environment information, and
+supporting evidence.
+
+## 9. Planned Testing vs Exploratory Testing
 
 ### Planned Testing
 
-The standard environment was tested using predefined test cases.
+Planned testing was performed using predefined test cases in Qase.
 
-Result:
-
-**25 Passed / 25 Total**
-
-No defects were identified during the execution of these predefined scenarios.
+The purpose was to verify expected behavior systematically and provide
+repeatable test execution.
 
 ### Exploratory Testing
 
-The With-Bugs environment was investigated without relying exclusively on predefined test cases.
+Exploratory testing was performed without relying exclusively on
+predefined test cases.
 
-Result:
+The tester explored the application from a user's perspective, followed
+navigation paths, checked UI behavior, verified state changes, and
+investigated unexpected results.
 
-**5 defects identified and reported.**
+This approach resulted in the discovery of five defects in the dedicated
+buggy environment.
 
-This demonstrates that passing predefined test cases does not necessarily mean that the application is completely free of defects.
+## 10. API Testing
 
----
+API testing was performed using Postman.
 
-# 11. API Testing
+The API testing activity included:
 
-API testing was performed using Postman against the API environment:
+- Sending HTTP requests
+- Verifying response status codes
+- Checking response bodies
+- Checking request parameters and payloads
+- Using authentication where required
+- Verifying returned data
+- Testing related API endpoints
 
-`https://api-with-bugs.practicesoftwaretesting.com`
+The Postman collection was exported as JSON and included in the
+portfolio as supporting evidence.
 
-The API testing scope included:
+## 11. Database Testing
 
-* Authentication
-* Products
-* Categories
-* Brands
-* Users
-* Authorization
-* Input validation
-* Negative scenarios
-* API error handling
-* Bug hunting
+Database testing was performed against PostgreSQL using Beekeeper
+Studio.
 
-Approximately 20–25 API requests were prepared for the API testing scope.
+The database testing activity included:
 
-The API results and requests are documented separately in the Postman collection.
+- Inspecting database structure
+- Creating and working with test data
+- Executing SELECT queries
+- Filtering records
+- Joining related tables
+- Verifying relationships between records
+- Checking returned data against expected relationships
 
----
+SQL queries were stored separately in the portfolio under the `sql/`
+directory.
 
-# 12. Database Testing
+## 12. Test Results Summary
 
-Basic database testing was performed using PostgreSQL and Beekeeper Studio.
+  Testing Activity            Result
+  --------------------------- -------------------------
+  Planned Manual Test Cases   Passed
+  Exploratory Testing         5 defects identified
+  API Testing                 Completed
+  Database Testing            Completed
+  Defect Reporting            5 Jira defects reported
 
-The database testing included:
+## 13. Test Evidence
 
-* Database structure inspection
-* Table inspection
-* Data retrieval
-* Filtering
-* Data modification
-* JOIN queries
-* GROUP BY queries
-* Basic data validation
+The portfolio contains screenshots and other evidence for the main
+testing activities, including:
 
-The SQL queries and database documentation are stored separately in the `sql/` directory.
+- Qase test cases
+- Qase test case details
+- Qase test run
+- Jira defect list
+- Jira defect details
+- Exploratory testing sessions
+- Postman requests and responses
+- Beekeeper Studio database structure and query results
 
----
+## 14. Traceability
 
-# 13. Test Results Summary
+The portfolio demonstrates the relationship between different QA
+activities:
 
-| Testing Activity             | Result    |
-| ---------------------------- | --------- |
-| Functional Test Cases        | 25 Passed |
-| Failed Test Cases            | 0         |
-| Blocked Test Cases           | 0         |
-| Exploratory Testing Sessions | 2         |
-| Defects Identified           | 5         |
-| Jira Bug Reports             | 5         |
-| API Testing                  | Completed |
-| Database Testing             | Completed |
-
----
-
-# 14. Test Evidence
-
-The following evidence was collected during the project:
-
-* Qase test case screenshots
-* Qase test run screenshot
-* Jira bug screenshots
-* Exploratory testing evidence
-* API/Postman screenshots
-* Database screenshots
-* SQL query results
-
-Evidence is stored in the project's `screenshots/` directory.
-
----
-
-# 15. Traceability
-
-The project maintains traceability between the main QA artifacts:
-
-```text
+``` text
 Test Plan
     ↓
-Scope
-    ↓
-Checklist
+Checklists
     ↓
 Test Cases
     ↓
-Qase Test Run
+Test Execution in Qase
     ↓
-Test Results
+Exploratory Testing
     ↓
-Jira Bug Reports
+Defect Reports in Jira
+
+API Testing → Postman
+Database Testing → PostgreSQL / Beekeeper Studio
 ```
 
-Exploratory testing follows a separate path:
+Planned test cases and exploratory testing serve different purposes. A
+defect discovered during exploratory testing does not have to originate
+from a predefined test case.
 
-```text
-Exploratory Testing Session
-    ↓
-Defect Identified
-    ↓
-Jira Bug Report
-```
+## 15. Conclusion
 
----
+The Practice Software Testing application was tested using a combination
+of planned manual testing, exploratory testing, API testing, and
+database testing.
 
-# 16. Conclusion
+The planned manual test cases executed against the standard environment
+passed successfully.
 
-The planned functional test suite consisting of 25 test cases was successfully executed against the standard Practice Software Testing environment, with all 25 test cases passing.
+Exploratory testing against the buggy environment identified five
+defects affecting product discovery, the user interface, navigation, and
+shopping cart functionality.
 
-Additional exploratory testing was performed against the With-Bugs environment. During these sessions, 5 defects were identified and documented in Jira, including defects affecting the shopping cart and checkout/payment functionality.
+The testing activities were documented using industry-relevant tools:
 
-The project demonstrates a complete manual QA workflow including test planning, checklist creation, test case design, test execution, exploratory testing, defect reporting, API testing, database validation, and final test reporting.
+- Qase for test case management and test execution
+- Jira for defect tracking
+- Postman for API testing
+- PostgreSQL and Beekeeper Studio for database testing
+- Markdown files for QA documentation
 
-The testing activities provided coverage of the application's main user flows and demonstrated the use of both structured and exploratory testing approaches.
+The completed portfolio demonstrates a practical end-to-end manual QA
+workflow, from test planning and test design through test execution,
+exploratory testing, defect reporting, API testing, and database
+verification.
